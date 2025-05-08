@@ -1,0 +1,54 @@
+[project]
+name = "mcp-server-copilot"
+version = "0.1.0"
+description = "A Meta Model Context Protocol (MCP) server that seamlessly scales LLMs to 1000+ MCP servers through automatic routing."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Tianshu Wang", email = "wang@tianshu.me"}]
+keywords = ["mcp", "copilot", "router"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "bm25s[core]>=0.2.12",
+    "mcp[cli]",
+    "pyyaml>=6.0.2",
+    "rich>=14.0.0",
+]
+
+[project.scripts]
+mcp-server-copilot = "mcp_server_copilot:main"
+
+# https://github.com/astral-sh/uv
+[tool.uv]
+package = true
+
+# https://github.com/charliermarsh/ruff
+[tool.ruff]
+fix = true
+line-length = 88
+target-version = "py310"
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I",   # isort
+]
+ignore = ["E501"]
+# https://github.com/timothycrosley/isort/
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+# https://github.com/microsoft/pyright
+[tool.pyright]
+include = ["src"]
+venv = ".venv"
+venvPath = "."
+typeCheckingMode = "off"
+useLibraryCodeForTypes = true
