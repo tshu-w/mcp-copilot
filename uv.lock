@@ -208,7 +208,7 @@ cli = [
 
 [[package]]
 name = "mcp-server-copilot"
-version = "0.1.0"
+version = "0.1.4"
 source = { editable = "." }
 dependencies = [
     { name = "bm25s", extra = ["core"] },

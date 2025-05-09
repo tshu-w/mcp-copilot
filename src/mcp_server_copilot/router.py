@@ -15,21 +15,21 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_CONFIG = {
     "mcpServers": {
-        "everything": {
-            "command": "npx",
-            "args": ["-y", "@modelcontextprotocol/server-everything"],
-        },
+        # "everything": {
+        #     "command": "npx",
+        #     "args": ["-y", "@modelcontextprotocol/server-everything"],
+        # },
         "fetch": {"command": "uvx", "args": ["mcp-server-fetch"]},
         "filesystem": {
             "command": "npx",
             "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
         },
         "git": {"command": "uvx", "args": ["mcp-server-git"]},
-        "github": {
-            "command": "npx",
-            "args": ["-y", "@modelcontextprotocol/server-github"],
-            "env": {"GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"},
-        },
+        # "github": {
+        #     "command": "npx",
+        #     "args": ["-y", "@modelcontextprotocol/server-github"],
+        #     "env": {"GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"},
+        # },
         "memory": {
             "command": "npx",
             "args": ["-y", "@modelcontextprotocol/server-memory"],
@@ -156,8 +156,10 @@ class Router:
             for key, tool in self._tools.items()
         ]
 
-        self._server_retriever = SparseRetriever().index(server_corpus)
-        self._tool_retriever = SparseRetriever().index(tool_corpus)
+        if server_corpus:
+            self._server_retriever = SparseRetriever().index(server_corpus)
+        if tool_corpus:
+            self._tool_retriever = SparseRetriever().index(tool_corpus)
 
     async def route_servers(self, query: str, top_k: int) -> types.CallToolResult:
         results = self._server_retriever.search(query, top_k)
