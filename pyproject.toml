@@ -1,6 +1,6 @@
 [project]
 name = "mcp-server-copilot"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Meta Model Context Protocol (MCP) server that seamlessly scales LLMs to 1000+ MCP servers through automatic routing."
 readme = "README.md"
 requires-python = ">=3.10"
