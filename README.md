@@ -1,12 +1,14 @@
 # MCP Server Copilot
 
-[![python](https://img.shields.io/badge/-Python_3.10_%7C_3.11_%7C_3.12-blue?logo=python&logoColor=white&style=flat-square)](https://github.com/tshu-w/lightning-template)
+[![python](https://img.shields.io/badge/-Python_3.10_%7C_3.11_%7C_3.12-blue?logo=python&logoColor=white&style=flat-square)](https://github.com/tshu-w/mcp-copilot)
+[![PyPI - Version](https://img.shields.io/pypi/v/mcp-server-copilot?style=flat-square)](https://pypi.org/project/mcp-server-copilot)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&style=flat-square)](https://github.com/astral-sh/uv)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json&style=flat-square)](https://github.com/astral-sh/ruff)
 
 A meta Model Context Protocol (MCP) server that seamlessly scales LLMs to 1000+ MCP servers through automatic routing without expose all servers and tools to LLMs directly.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1ba57685-f06e-4cca-b696-ecaba7e6c7e9" alt="mcp_copilot" style="max-width:100%; height:auto; width:500px;">
+  <img src="https://github.com/user-attachments/assets/7bb3ac79-6706-4fc5-8dab-2f0a3e5b981c" alt="mcp_copilot" style="max-width:100%; height:auto; width:500px;">
 </p>
 
 ## Components
@@ -57,10 +59,12 @@ Add to your MCP Client settings:
 <summary>Using uvx</summary>
 
 ```json
-"mcpServers": {
-  "copilot": {
-    "command": "uvx",
-    "args": ["mcp-server-copilot", "--config", "~/.config/mcp-server-copilot/config.json"]
+{
+  "mcpServers": {
+    "copilot": {
+      "command": "uvx",
+      "args": ["mcp-server-copilot", "--config", "~/.config/mcp-server-copilot/config.json"]
+    }
   }
 }
 ```
@@ -70,10 +74,12 @@ Add to your MCP Client settings:
 <summary>Using pip installation</summary>
 
 ```json
-"mcpServers": {
-  "copilot": {
-    "command": "python",
-    "args": ["-m", "mcp_server_copilot", "--config", "~/.config/mcp-server-copilot/config.json"]
+{
+  "mcpServers": {
+    "copilot": {
+      "command": "python",
+      "args": ["-m", "mcp_server_copilot", "--config", "~/.config/mcp-server-copilot/config.json"]
+    }
   }
 }
 ```
@@ -81,6 +87,9 @@ Add to your MCP Client settings:
 
 ## TODOs
 
+- [ ] Add Dockerfile
+- [ ] Tune prompt and add show cases
 - [ ] Manage Servers more easily
 - [ ] Add Semantic Routing
 - [ ] Add Planning Capabilities
+- [ ] Resources & Prompts
