@@ -1,6 +1,7 @@
 # MCP Server Copilot
 
-[![python](https://img.shields.io/badge/-Python_3.10_%7C_3.11_%7C_3.12-blue?logo=python&logoColor=white&style=flat-square)](https://github.com/tshu-w/mcp-copilot)
+[![MCP Server](https://img.shields.io/badge/MCP-Server-D2C3A5?style=flat-square)](https://modelcontextprotocol.io)
+[![python](https://img.shields.io/badge/Python-3.10_%7C_3.11_%7C_3.12-blue?logo=python&logoColor=white&style=flat-square)](https://github.com/tshu-w/mcp-copilot)
 [![PyPI - Version](https://img.shields.io/pypi/v/mcp-server-copilot?style=flat-square)](https://pypi.org/project/mcp-server-copilot)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&style=flat-square)](https://github.com/astral-sh/uv)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json&style=flat-square)](https://github.com/astral-sh/ruff)
